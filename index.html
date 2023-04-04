@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Iconos de Aplicaciones</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		.container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+		}
+
+		.icon {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			margin: 20px;
+			font-size: 30px;
+			color: #fff;
+			text-align: center;
+			text-decoration: none;
+		}
+
+		.youtube {
+			background-color: red;
+		}
+
+		.spotify {
+			background-color: green;
+		}
+
+		.google {
+			background-color: blue;
+		}
+
+		.hide-address-bar body {
+			overflow: auto;
+			-webkit-overflow-scrolling: touch;
+			padding-top: constant(safe-area-inset-top); /* iOS 11.2+ */
+			padding-top: env(safe-area-inset-top); /* iOS 11.2+ */
+			height: calc(100vh - constant(safe-area-inset-top)); /* iOS 11.2+ */
+			height: calc(100vh - env(safe-area-inset-top)); /* iOS 11.2+ */
+		}
+	</style>
+	<script>
+		window.addEventListener("load", function() {
+			setTimeout(function(){
+				document.body.classList.add("hide-address-bar");
+			}, 2000);
+		});
+	</script>
+</head>
+<body>
+	<div class="container">
+		<div class="icon youtube">
+			<a href="intent://www.youtube.com/#Intent;scheme=https;package=com.google.android.youtube;end;">YouTube</a>
+		</div>
+		<div class="icon spotify">
+			<a href="spotify://">Spotify</a>
+		</div>
+		<div class="icon google">
+			<a href="intent://www.google.com/#Intent;scheme=https;package=com.google.android.googlequicksearchbox;end;">Google</a>
+		</div>
+	</div>
+</body>
+</html>
